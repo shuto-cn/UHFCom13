@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="cordova-plugin-uhf" version="0.0.2"
+        xmlns:android="http://schemas.android.com/apk/res/android" xmlns="http://apache.org/cordova/ns/plugins/1.0">
+    <name>Cordova UHF Plugin</name>
+    <js-module name="cordova-plugin-uhf" src="www/cordova-plugin-uhf.js">
+        <clobbers target="cordova.plugin.uhf"/>
+    </js-module>
+    <platform name="android">
+        <config-file parent="/*" target="res/xml/config.xml">
+            <feature name="UHF">
+                <param name="android-package" value="cordova.plugin.uhf.UHF"/>
+            </feature>
+        </config-file>
+        <source-file src="src/android/cordova/plugin/uhf/UHF.java"
+                     target-dir="src/cordova/plugin/uhf"/>
+        <source-file src="src/android/cordova/plugin/uhf/Util.java"
+                     target-dir="src/cordova/plugin/uhf"/>
+        <source-file src="src/android/uhfcom13_v15.jar" target-dir="libs"/>
+        <source-file src="src/android/SerialPort.jar" target-dir="libs"/>
+
+
+        <resource-file src="src/android/libs/armeabi/libdevapi.so"
+                       target="jniLibs/armeabi/libdevapi.so"/>
+        <resource-file src="src/android/libs/armeabi/libirdaSerialPort.so"
+                       target="jniLibs/armeabi/libirdaSerialPort.so"/>
+        <resource-file src="src/android/libs/armeabi/libuhf.so"
+                       target="jniLibs/armeabi/libuhf.so"/>
+
+        <resource-file src="src/android/libs/armeabi-v7a/libdevapi.so"
+                       target="jniLibs/armeabi-v7a/libdevapi.so"/>
+        <resource-file src="src/android/libs/armeabi-v7a/libirdaSerialPort.so"
+                       target="jniLibs/armeabi-v7a/libirdaSerialPort.so"/>
+        <resource-file src="src/android/libs/armeabi-v7a/libuhf.so"
+                       target="jniLibs/armeabi-v7a/libuhf.so"/>
+
+        <resource-file src="src/android/libs/arm64-v8a/libdevapi.so"
+                       target="jniLibs/arm64-v8a/libdevapi.so"/>
+        <resource-file src="src/android/libs/arm64-v8a/libirdaSerialPort.so"
+                       target="jniLibs/arm64-v8a/libirdaSerialPort.so"/>
+        <resource-file src="src/android/libs/arm64-v8a/libuhf.so"
+                       target="jniLibs/arm64-v8a/libuhf.so"/>
+
+    </platform>
+</plugin>
