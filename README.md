@@ -20,7 +20,17 @@ https://github.com/shuto-cn/uhf-demo/tree/Com13_SDK_v1.5
 * 参数：
 * 返回值：
 EPC数组，因为可能读到多个。<pre>["30396062C3AE88C00021E2BC"]</pre>
-* 多次巡卡方法已取消，如有需求请用js实现。
+
+### 连续询卡 - 读取卡的 EPC
+* 调用：
+<pre>cordova.plugins.uhf.inventoryCard(successCallBack, errorCallback);</pre>
+* 参数：
+* 返回值：
+EPC数组，因为可能读到多个。<pre>["30396062C3AE88C00021E2BC"]</pre>
+
+### 停止询卡 - 读取卡的 EPC
+* 调用：
+<pre>cordova.plugins.uhf.stopInventoryCard(successCallBack, errorCallback);</pre>
 
 ### 写卡
 * 调用：
